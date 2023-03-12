@@ -1,0 +1,265 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    font-family: -apple-system, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png") no-repeat center center fixed;
+    width: 100%;
+    background-size:cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+}
+.login-email{
+    margin-right: 40px;
+}
+#register-email{
+    margin-right: 103px;
+}
+#register-password{
+    margin-right: 73px;
+}
+#register-name{
+    margin-right: 100px;
+}
+h1{
+    text-align: center;
+}
+#logged-out{
+    text-align: center;
+}
+
+.text-algin-outter{
+    width: 80%;
+    margin: auto;
+}
+
+.text-algin{
+    text-align: left;
+    margin: auto;
+    display: inline-block;
+}
+
+
+#slackr{
+    margin-bottom: 50px !important;
+}
+
+#logo{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+button{
+    background-color: blue;
+    color: #fff;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 15px !important;
+    margin: 7px !important;
+    cursor: pointer;
+}
+
+button[disabled]{
+    background-color: #cccccc;
+    color: #666666;
+  }
+
+.nav{
+    display:contents !important; 
+}
+
+span.nav{
+    color: blue;
+}
+
+span.nav:hover{
+    cursor: pointer;
+}
+
+#channels-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin: auto;
+    border: 1px solid black;
+    width: 75%;
+}
+
+#public-channels-body{
+    display: flex;
+    flex-direction: column;
+}
+
+#public-channels-body a:hover{
+    cursor: pointer;
+}
+
+#private-channels-body{
+    display: flex;
+    flex-direction: column;
+}
+
+#private-channels-body a:hover{
+    cursor: pointer;
+}
+
+/* Channel form */
+.container{
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    --bs-gutter-x: 0 !important;
+    width: 80% !important;
+    grid-row-gap: 10px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.box{
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.channel-name{
+    height: 30px;
+}
+#channel-name-div{
+    display: flex;
+    align-items: center;
+}
+
+.channel-description{
+    height: 60px;
+    display: inline-block;
+}
+
+#channel-description-div{
+    display: flex;
+    align-items: center;
+}
+img{
+    width: 50px;
+    height: 50px;
+    margin: auto 10px;
+}
+
+
+span{
+    margin: 10px;
+}
+
+.sender-message{
+    font-size: 18px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.sender-name{
+    font-size: 12px;
+}
+
+.sender-timestamp{
+    font-size: 12px;
+}
+
+#create-channel-div{
+    border: 1px solid grey;
+    width: 75%;
+    margin: auto;
+}
+#channel-info-outer{
+    border: 1px solid grey;
+    width: 60%; 
+    margin: auto;
+}
+
+#channel-info{
+    margin: auto;
+    display: inline-block;
+    text-align: left;
+}
+
+span[class='channel-name']{
+    display: flex;
+    align-items: center;
+}
+
+span[class='channel-description']{
+    display: flex;
+    align-items: center;
+}
+
+textarea[id="channel-name"]{
+    width:55%;
+    bottom: 5px;
+  }
+
+textarea[id="channel-description"]{
+    width:60%;
+  }
+textarea[id="msgsend-text"]{
+    width:55%;
+}
+
+#send-new-msg-div{
+    margin: auto;
+    width: 75%;
+}
+
+#channel-messages-body{
+    text-align: left;
+    margin: auto;
+    width: 85%;
+}
+
+.emoji-button{
+    background-color: #E5E5E5;
+    height:28px;
+    width:28px; 
+    padding: 0 !important;
+    border-radius: 40%;
+}
+
+.emoji_check{
+    background-color: rgba(var(--sk_highlight_accent,29,155,209),1);
+}
+
+#ptag{
+    margin: auto;
+}
+
+#loading{
+    margin-bottom: 20px;
+    color: orange;
+}
+
+#pinned-messages-header{
+    font-weight:bold;
+    font-size:20px;
+}
+
+#pinned-messages-container{
+    width: 85%;
+    margin: auto;
+    text-align: left;
+    border: 1px solid grey;
+}
+
+#invite-button{
+    width:11%;
+}
+
+.modal-content{
+    height: 100%;
+}

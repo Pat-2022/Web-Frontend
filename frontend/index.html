@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Slackr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/provided.css" />
+  <script type="module" src="src/helpers.js"></script>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <!-- The jquery here is only for invoking error popup, #228 on ed forum says it's allowed.  -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+
+<body>
+  <header class="banner">
+    <h1 id="slackr">Slackr</h1> 
+  </header>
+
+  <main role="main">
+    <div id="logged-out">
+      <span class="nav" id="nav-register">Register</span> | <span class="nav" id="nav-login">Login</span>
+      <hr>
+
+      <section id ="register" class="hide">
+        <h2>Register</h2>
+        <div class="text-algin-outter">
+          <div class="text-algin">
+            <span id="register-email">Email:</span> <input type="text" id="register-email-input" placeholder="LBJames@gmail.com"> <br>
+            <span id="register-password">Password:</span> <input type="password" id="register-password-input" placeholder="······"> <br>
+            <span>Confirm Password:</span> <input type="password" id="confirm-password-input" placeholder="······"> <br>
+            <span id="register-name">Name:</span> <input type="text" id="register-name-input" placeholder="Lebron James"> <br>
+          </div>
+        </div>
+        <button id="register-action">Register</button>
+      </section>
+
+      <section id ="login">
+        <h2>Login</h2>
+        <div class="text-algin-outter">
+          <div class="text-algin">
+            <span class="login-email">Email:</span><input type="text" id="login-email" > <br>
+            <span>Password:</span><input type="password" id="login-password" > <br>
+          </div>
+        </div>
+        <button id="login-action" >Login</button>
+      </section>
+    </div>
+
+    <div id="logged-in" class="hide">
+      <div id="channels-list">
+        <div id="public-channels-list">
+          <h4>Public Channels</h4>
+          <div id="public-channels-body"></div>
+        </div>
+
+        <div id="private-channels-list">
+          <h4>Private Channels</h4>
+          <div id="private-channels-body"></div>
+        </div>
+      </div>
+      <br>
+      <div id="create-channel-div">
+        <button id="create-channel">Create channel</button>
+        <button id="close-channel-form">Close channel form</button>
+        <br>
+        <form name="form" id = "channel-form" class="hide">
+          <div class="container">
+              <div class="box">Channel Name</div>
+              <input type="text" name="channel_name">
+              <div class="box">Description</div>
+              <input type="text" name="channel_description" value="">
+              <div class="box">Channel Type</div>
+              <select name="channel_type" >
+                  <option value="Public">Public</option>
+                  <option value="Private">Private</option>
+              </select>
+        
+          </div>
+            </form>
+            <button id="create-form" class="hide">Confirm creating</button>
+      </div>
+    <br><br>
+
+    <div id="Current-channel-section" class="hide">
+      <div id="channel-info-outer">
+        <div id="channel-info">
+          <div id="channel-name-div">
+            <span class="channel-name">Channel Name: </span>
+            <textarea id="channel-name" class="channel-name"></textarea>
+          </div>
+          <div id="channel-description-div">
+            <span class="channel-description">Description: </span>
+            <textarea id="channel-description" class="channel-description"></textarea>
+          </div>
+          <div id = "channel-type-div">
+            <span class="channel-type">Channel Type: </span>
+            <span id="channel-type" class="channel-type"></span>
+          </div>
+          <div id = "channel-timestamp-div">
+            <span class="channel-timestamp">Time Created: </span>
+            <span id="channel-timestamp" class="channel-timestamp"></span>
+          </div>
+          <div id = "channel-creator-div">
+            <span class="channel-creator">Channel Creator: </span>
+            <span id="channel-creator" class="channel-creator"></span>
+          </div>
+        </div>
+        <br>
+        <button id="change-channel-info-action">Change Channel Info</button>
+      </div>
+      <button type="button" id="invite-button" data-bs-toggle="modal" data-bs-target="#inviteModal">Invite</button>
+
+      <br><br>
+      <div id="channel-messages" >
+        <div id="channel-messages-top">
+          <div id="send-new-msg-div">New Message: <textarea id="msgsend-text"></textarea>
+            <button id="msgsend-action">Send</button>
+          </div>
+          <div id="pinned-messages-container">
+            <p id="pinned-messages-header">Pinned-Messages: </p>
+            <div id="pinned-messages"></div>
+          </div>
+        </div>
+        <br>
+        <div id="channel-messages-body"></div>
+      </div>
+      <button id="leave-channel-action" class="hide">Leave the channel</button>
+    </div>
+
+    <button id="join-channel-action" class="hide">Join the channel</button>
+    <div>
+      <br><br><br>
+      <button id="logout-action">Logout</button>
+    </div>
+  </main>
+
+  <footer>
+    <p id="logo">&copy; Slackr</p>
+  </footer>
+
+  <script type="module" src="src/main.js"></script>
+
+  <!-- Error Modal -->
+  <div id="ErrorModal" class="modal" role="dialog" >
+      <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+          <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+          <p id="ptag">Error!</p>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+      </div>
+  </div>
+
+  <!-- The Invite Modal -->
+  <div class="modal" id="inviteModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Invite friends</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+          <h3>After finishing selecting friend(s), click at invite to invite them.</h3>
+          <div class="invite-container">
+          <section class="invite-section">
+          </section>
+          <section class="invite-section" id="invite-user-name-section">
+            <p>User Names</p>
+            <select multiple="multiple" id="myMulti">
+              <!-- <option>Mia</option>
+              <option>Sebastian</option> -->
+              
+            </select>
+          </section>
+          </div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-primary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="confirm-invite-button" class="btn btn-default btn-primary" data-bs-dismiss="modal">Invite</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Three stylesheets to implement invite dropdown-->
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+  <link rel="stylesheet" href="styles/invite_dropdown.css">
+  <!-- javascript for the invite modal -->
+  <script src="src/invite_dropdown.js"></script>
+
+</body>
+
+</html>

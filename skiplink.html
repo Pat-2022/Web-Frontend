@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .skipLink {
+            position: absolute;
+            z-index: 100;
+            display: block;
+            background: white;
+            overflow: hidden;
+            white-space: nowrap;
+            clip: rect(1px, 1px, 1px, 1px);
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+        }
+        .skipLink:focus, .skipLink:active {
+            overflow: initial;
+            white-space: initial;
+            clip: initial;
+            height: initial;
+            width: initial;
+            margin: initial;
+        }
+    </style>
+</head>
+<body>
+    <span id="top">Top</span>
+    <br>
+    <a className="skipLink" href="#bottom">Go to bottom</a>
+    <div className="carousel">{...}</div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <a className="skipLink" href="#top">Go to the top</a>
+    <br>
+    <span id="bottom">Bottom</span>
+    <button role="switch" aria-checked={true}>Accept cookies</button>
+    <button
+        type="button"
+        role="switch"
+        aria-checked="true"
+        id="speakerPower"
+        class="switch">
+        <span aria-hidden="true">off</span>
+        <span aria-hidden="true">on</span>
+    </button>
+    <label for="speakerPower" class="switch">Speaker power</label>
+
+</body>
+</html>
